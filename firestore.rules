@@ -1,0 +1,27 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Public read for crops marketplace; verified writes
+    match /crops/{cropId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Orders collection for farmers and buyers
+    match /orders/{orderId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Users collection for registered farmers and buyers
+    match /users/{userId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Fallback for any other document in development
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}

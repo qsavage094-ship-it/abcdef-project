@@ -8,7 +8,7 @@ import {
   Languages
 } from 'lucide-react';
 import { languages } from '../i18n/translations';
-import { saveUserToDatabase } from '../services/dbService';
+import { saveUserToDatabase, authenticateWithFirebase } from '../services/dbService';
 
 export default function AuthScreen({ 
   onLogin, 
@@ -45,7 +45,10 @@ export default function AuthScreen({
       location: location.trim() || (assignedRole === 'farmer' ? 'Nashik, Maharashtra' : 'Vashi APMC, Mumbai')
     };
 
-    // Execute real HTTP fetch POST request to save to backend database
+    // Execute real Firebase Auth & Firestore sync
+    if (identifier.includes('@')) {
+      await authenticateWithFirebase(identifier, password, assignedRole, fullName);
+    }
     await saveUserToDatabase(userPayload);
     setIsSaving(false);
 

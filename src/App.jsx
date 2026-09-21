@@ -13,6 +13,14 @@ import AiVoiceAssistant from './components/AiVoiceAssistant';
 import { translations } from './i18n/translations';
 import { INITIAL_CROPS, MOCK_BUYERS, INITIAL_ORDERS, INITIAL_CHAT_MESSAGES } from './data/mockData';
 import { Home, TrendingUp, BarChart3, Truck, LogOut, Sprout, ShoppingBag, UserCheck, ShieldCheck, ArrowRight } from 'lucide-react';
+import { 
+  saveCropToDatabase, 
+  saveOrderToDatabase, 
+  updateOrderStatusInDatabase, 
+  subscribeToCrops, 
+  subscribeToOrders 
+} from './services/dbService';
+import { firebaseConfig, isFirebaseConnected } from './firebase/config';
 
 const LOCALIZED_MANDI_DATA = {
   hi: {
@@ -176,20 +184,52 @@ export default function App() {
 
   const t = translations[currentLang] || translations.en;
 
+  // Real-time synchronization with Firebase Firestore
+  useEffect(() => {
+    const unsubscribeCrops = subscribeToCrops((firestoreCrops) => {
+      if (firestoreCrops && firestoreCrops.length > 0) {
+        setCrops(prev => {
+          const cloudIds = new Set(firestoreCrops.map(c => c.id));
+          const localOnly = prev.filter(c => !cloudIds.has(c.id));
+          return [...firestoreCrops, ...localOnly];
+        });
+      }
+    });
+
+    const unsubscribeOrders = subscribeToOrders((firestoreOrders) => {
+      if (firestoreOrders && firestoreOrders.length > 0) {
+        setOrders(prev => {
+          const cloudIds = new Set(firestoreOrders.map(o => o.id));
+          const localOnly = prev.filter(o => !cloudIds.has(o.id));
+          return [...firestoreOrders, ...localOnly];
+        });
+      }
+    });
+
+    return () => {
+      if (typeof unsubscribeCrops === 'function') unsubscribeCrops();
+      if (typeof unsubscribeOrders === 'function') unsubscribeOrders();
+    };
+  }, []);
+
   const handleAddCrop = (newCrop) => {
     setCrops(prev => [newCrop, ...prev]);
+    saveCropToDatabase(newCrop);
   };
 
   const handlePlaceOrder = (newOrder) => {
     setOrders(prev => [newOrder, ...prev]);
+    saveOrderToDatabase(newOrder);
   };
 
   const handleAcceptOrder = (orderId) => {
     setOrders(prev => prev.map(o => o.id === orderId ? { ...o, status: 'In Transit' } : o));
+    updateOrderStatusInDatabase(orderId, 'In Transit');
   };
 
   const handleRejectOrder = (orderId) => {
     setOrders(prev => prev.map(o => o.id === orderId ? { ...o, status: 'Cancelled' } : o));
+    updateOrderStatusInDatabase(orderId, 'Cancelled');
   };
 
   return (
@@ -396,8 +436,20 @@ export default function App() {
           <div>
             <strong style={{ color: 'var(--color-deep-green)' }}>{t.brand || "AgriDirect"}</strong> — {t.tagline || "Digital Agri-Marketplace & Supply Chain"}.
           </div>
-          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-            100% Direct APMC Mandi Trading Platform
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem' }}>
+            <span style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              padding: '3px 8px',
+              borderRadius: 'var(--radius-xs)',
+              backgroundColor: 'var(--color-cream-subtle)',
+              border: '1px solid var(--border-light)',
+              color: 'var(--color-deep-green)',
+              fontWeight: 600
+            }}>
+              🔥 Firebase: <code style={{ color: 'var(--color-warm-orange)' }}>{firebaseConfig.projectId}</code>
+            </span>
           </div>
         </div>
       </footer>
