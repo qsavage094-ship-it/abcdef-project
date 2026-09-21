@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1015462643197",
+    "project_id": "digital-agri-project",
+    "storage_bucket": "digital-agri-project.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015462643197:android:3be7710ae588cbf70cc594",
+        "android_client_info": {
+          "package_name": "com.project.in"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrg189y0yRjMWSvvXXG_noHxLEqcOUiok"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

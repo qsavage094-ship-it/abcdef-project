@@ -1,0 +1,123 @@
+[
+  {
+    "_id": "56f5e95b371f107897e54987",
+    "name": "AgroConnect Administrator",
+    "email": "admin@agroconnect.com",
+    "password": "$2a$10$qYxM7GdeYm/OpCeZwfXthehVhzZ.MEUotBSbOUz1n9iHN37.mHHVi",
+    "phone": "+91 98765 00001",
+    "role": "admin",
+    "address": "National Agriculture Directorate, Krishi Bhavan, New Delhi",
+    "createdAt": "2026-09-21T04:03:15.073Z",
+    "updatedAt": "2026-09-21T04:03:15.073Z"
+  },
+  {
+    "_id": "e8b1eb6faf66960959fbc08d",
+    "name": "Ramesh Patel",
+    "email": "ramesh@patelfarms.in",
+    "password": "$2a$10$qYxM7GdeYm/OpCeZwfXthelg2e6vN8DOxYaOyNHaJH5Bh/ffm5Lh6",
+    "phone": "+91 98251 34821",
+    "role": "user",
+    "address": "Plot 42, Anand Agricultural Belt, Anand, Gujarat",
+    "createdAt": "2026-09-21T04:03:15.076Z",
+    "updatedAt": "2026-09-21T04:03:15.076Z"
+  },
+  {
+    "_id": "18b84855b13775f72b39845a",
+    "name": "Gurpreet Singh",
+    "email": "gurpreet@punjabagro.com",
+    "password": "$2a$10$qYxM7GdeYm/OpCeZwfXthelg2e6vN8DOxYaOyNHaJH5Bh/ffm5Lh6",
+    "phone": "+91 98140 82910",
+    "role": "user",
+    "address": "Kisan Vihar, Ludhiana Rural, Ludhiana, Punjab",
+    "createdAt": "2026-09-21T04:03:15.076Z",
+    "updatedAt": "2026-09-21T04:03:15.076Z"
+  },
+  {
+    "_id": "3c9f33b4fffe886661ed68c9",
+    "name": "Suresh Reddy",
+    "email": "suresh@deccanfarms.co",
+    "password": "$2a$10$qYxM7GdeYm/OpCeZwfXthelg2e6vN8DOxYaOyNHaJH5Bh/ffm5Lh6",
+    "phone": "+91 94401 77321",
+    "role": "user",
+    "address": "Chilli Yard Road, Guntur Agro Hub, Guntur, Andhra Pradesh",
+    "createdAt": "2026-09-21T04:03:15.076Z",
+    "updatedAt": "2026-09-21T04:03:15.076Z"
+  },
+  {
+    "_id": "479e7973b84a53c8cf5036a5",
+    "name": "Ananya Sharma",
+    "email": "ananya@himalayanorchards.in",
+    "password": "$2a$10$qYxM7GdeYm/OpCeZwfXthelg2e6vN8DOxYaOyNHaJH5Bh/ffm5Lh6",
+    "phone": "+91 98160 55432",
+    "role": "user",
+    "address": "Kotgarh Valley Apple Orchards, Shimla, Himachal Pradesh",
+    "createdAt": "2026-09-21T04:03:15.076Z",
+    "updatedAt": "2026-09-21T04:03:15.076Z"
+  },
+  {
+    "_id": "ae422003c18b57aa43a4915e",
+    "name": "Rajesh Verma",
+    "email": "rajesh@gangaorganic.in",
+    "password": "$2a$10$qYxM7GdeYm/OpCeZwfXthelg2e6vN8DOxYaOyNHaJH5Bh/ffm5Lh6",
+    "phone": "+91 94502 91823",
+    "role": "user",
+    "address": "Ganga Basin Organic Cluster, Mirzapur Road, Varanasi, Uttar Pradesh",
+    "createdAt": "2026-09-21T04:03:15.076Z",
+    "updatedAt": "2026-09-21T04:03:15.076Z"
+  },
+  {
+    "_id": "8a40005cfafabd9ed069a37a",
+    "name": "Balvinder Kaur",
+    "email": "balvinder@amritsargrains.com",
+    "password": "$2a$10$qYxM7GdeYm/OpCeZwfXthelg2e6vN8DOxYaOyNHaJH5Bh/ffm5Lh6",
+    "phone": "+91 98722 41098",
+    "role": "user",
+    "address": "Majha Agro Estates, GT Road, Amritsar, Punjab",
+    "createdAt": "2026-09-21T04:03:15.076Z",
+    "updatedAt": "2026-09-21T04:03:15.076Z"
+  },
+  {
+    "_id": "64ff669d1b2ee31d7e879232",
+    "name": "Priya Sundaram",
+    "email": "priya@coimbatoreproduce.in",
+    "password": "$2a$10$qYxM7GdeYm/OpCeZwfXthelg2e6vN8DOxYaOyNHaJH5Bh/ffm5Lh6",
+    "phone": "+91 94432 10987",
+    "role": "user",
+    "address": "Pollachi Coconut & Spices belt, Coimbatore, Tamil Nadu",
+    "createdAt": "2026-09-21T04:03:15.076Z",
+    "updatedAt": "2026-09-21T04:03:15.076Z"
+  },
+  {
+    "_id": "53f035b511b917ea6bada247",
+    "name": "Manoj Deshmukh",
+    "email": "manoj@nashikvineyards.com",
+    "password": "$2a$10$qYxM7GdeYm/OpCeZwfXthelg2e6vN8DOxYaOyNHaJH5Bh/ffm5Lh6",
+    "phone": "+91 98220 34156",
+    "role": "user",
+    "address": "Dindori Valley Grape Farms, Nashik, Maharashtra",
+    "createdAt": "2026-09-21T04:03:15.076Z",
+    "updatedAt": "2026-09-21T04:03:15.076Z"
+  },
+  {
+    "_id": "3046c3b74137700a5d4b2d35",
+    "name": "Vikram Meena",
+    "email": "vikram@rajasthanspices.in",
+    "password": "$2a$10$qYxM7GdeYm/OpCeZwfXthelg2e6vN8DOxYaOyNHaJH5Bh/ffm5Lh6",
+    "phone": "+91 94141 87654",
+    "role": "user",
+    "address": "Hadoti Spice Corridor, Kota, Rajasthan",
+    "createdAt": "2026-09-21T04:03:15.076Z",
+    "updatedAt": "2026-09-21T04:03:15.076Z"
+  },
+  {
+    "_id": "c814652fadfbba716a477281",
+    "name": "Tanvi Kulkarni",
+    "email": "tanvi@greenplateorganics.com",
+    "password": "$2a$10$qYxM7GdeYm/OpCeZwfXthelg2e6vN8DOxYaOyNHaJH5Bh/ffm5Lh6",
+    "phone": "+91 98230 45678",
+    "role": "user",
+    "address": "GreenPlate Wholesale Procurement, APMC Yard, Vashi, Navi Mumbai",
+    "createdAt": "2026-09-21T04:03:15.077Z",
+    "updatedAt": "2026-09-21T04:03:15.077Z"
+  }
+]

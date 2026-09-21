@@ -1,0 +1,615 @@
+/* ==========================================================================
+   AgriDirect — Professional Agricultural Trading Design System
+   Palette: Deep Green + Warm Orange + Cream + White + Charcoal
+   Style: Minimal, High-Contrast, Clean Solid Colors, Sharp Simple Navigation.
+   ========================================================================== */
+
+:root {
+  --font-sans: 'Outfit', 'Plus Jakarta Sans', 'Mukta Malar', 'Noto Sans Tamil', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Outfit', 'Mukta Malar', 'Noto Sans Tamil', 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* THEME PALETTE: Deep Green + Warm Orange + Cream + White + Charcoal */
+  --color-deep-green: #164e2e;
+  --color-deep-green-hover: #0f3921;
+  --color-deep-green-subtle: #e2ede5;
+  --color-deep-green-border: #80b795;
+
+  --color-warm-orange: #d96b27;
+  --color-warm-orange-hover: #b85417;
+  --color-warm-orange-subtle: #fbeee4;
+  --color-warm-orange-border: #f0ab7d;
+
+  --color-cream: #f4efe4;
+  --color-cream-subtle: #ede6d6;
+  --color-cream-border: #d8cca6;
+
+  --color-white: #ffffff;
+  
+  --color-charcoal: #1f2421;
+  --color-charcoal-muted: #47544b;
+  --color-charcoal-light: #6e7c73;
+
+  /* Semantics */
+  --bg-app: #f4efe4;
+  --bg-surface: #ffffff;
+  --bg-subtle: #ede6d6;
+  --bg-card: #ffffff;
+  --bg-input: #ffffff;
+
+  --text-primary: #1f2421;
+  --text-secondary: #47544b;
+  --text-muted: #6e7c73;
+  --text-inverse: #ffffff;
+
+  --border-light: #d8cca6;
+  --border-medium: #b6a77e;
+  --border-strong: #1f2421;
+
+  --agri-green: #164e2e;
+  --agri-green-dark: #0f3921;
+  --agri-green-subtle: #e2ede5;
+  --agri-green-border: #80b795;
+
+  --harvest-amber: #d96b27;
+  --harvest-amber-dark: #b85417;
+  --harvest-amber-subtle: #fbeee4;
+  --harvest-amber-border: #f0ab7d;
+
+  /* Clean Minimal Radii (Sharp & Simple, NO Bubble Style) */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-pill: 4px; /* converted to sharp minimal radius */
+
+  /* Minimal Crisp Shadows (NO Glowing / Neon) */
+  --shadow-sm: 0 1px 2px rgba(31, 36, 33, 0.06);
+  --shadow-card: 0 1px 3px rgba(31, 36, 33, 0.08), 0 1px 2px rgba(31, 36, 33, 0.04);
+  --shadow-hover: 0 4px 12px rgba(31, 36, 33, 0.1);
+}
+
+[data-theme="dark"] {
+  --color-deep-green: #22c55e;
+  --color-deep-green-hover: #16a34a;
+  --color-deep-green-subtle: #11281c;
+  --color-deep-green-border: #1a4f33;
+
+  --color-warm-orange: #ea580c;
+  --color-warm-orange-hover: #c2410c;
+  --color-warm-orange-subtle: #2b170c;
+  --color-warm-orange-border: #522712;
+
+  --color-cream: #141a16;
+  --color-cream-subtle: #1b241f;
+  --color-cream-border: #28362e;
+
+  --color-white: #1b241f;
+
+  --color-charcoal: #f3f7f4;
+  --color-charcoal-muted: #a4b3aa;
+  --color-charcoal-light: #76877c;
+
+  --bg-app: #121714;
+  --bg-surface: #19211c;
+  --bg-subtle: #1f2a24;
+  --bg-card: #19211c;
+  --bg-input: #151d18;
+
+  --text-primary: #f3f7f4;
+  --text-secondary: #a4b3aa;
+  --text-muted: #76877c;
+  --text-inverse: #121714;
+
+  --border-light: #2a382f;
+  --border-medium: #3c5244;
+  --border-strong: #f3f7f4;
+
+  --agri-green: #22c55e;
+  --agri-green-dark: #16a34a;
+  --agri-green-subtle: #11281c;
+  --agri-green-border: #1a4f33;
+
+  --harvest-amber: #f97316;
+  --harvest-amber-dark: #ea580c;
+  --harvest-amber-subtle: #2b170c;
+  --harvest-amber-border: #522712;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 1px 4px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 4px 14px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  line-height: 1.55;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+h1 { font-size: 2.25rem; font-weight: 800; letter-spacing: -0.02em; }
+h2 { font-size: 1.7rem; font-weight: 700; }
+h3 { font-size: 1.3rem; font-weight: 700; }
+h4 { font-size: 1.05rem; font-weight: 700; }
+
+.text-mono {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+
+.text-subtle {
+  color: var(--text-secondary);
+}
+
+/* Minimal Rounded Cards (Solid, Clean, High Contrast) */
+.swiss-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+
+.swiss-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 10px;
+}
+
+/* Buttons - Solid, Sharp, Professional */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  min-height: 38px;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-deep-green);
+  color: #ffffff;
+  border-color: var(--color-deep-green);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-deep-green-hover);
+  border-color: var(--color-deep-green-hover);
+}
+
+.btn-accent {
+  background-color: var(--color-warm-orange);
+  color: #ffffff;
+  border-color: var(--color-warm-orange);
+}
+
+.btn-accent:hover {
+  background-color: var(--color-warm-orange-hover);
+  border-color: var(--color-warm-orange-hover);
+}
+
+.btn-green {
+  background-color: var(--color-deep-green);
+  color: #ffffff;
+  border-color: var(--color-deep-green);
+}
+
+.btn-green:hover {
+  background-color: var(--color-deep-green-hover);
+}
+
+.btn-outline {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-deep-green);
+  background-color: var(--bg-subtle);
+  color: var(--color-deep-green);
+}
+
+.btn-sm {
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  min-height: 32px;
+  border-radius: var(--radius-xs);
+}
+
+.btn-pill {
+  border-radius: var(--radius-sm);
+}
+
+/* Badges & Tags - Clean, Rectangular, High Contrast */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+  font-size: 0.725rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.tag-green {
+  background-color: var(--color-deep-green-subtle);
+  color: var(--color-deep-green);
+  border: 1px solid var(--color-deep-green-border);
+}
+
+.tag-amber {
+  background-color: var(--color-warm-orange-subtle);
+  color: var(--color-warm-orange);
+  border: 1px solid var(--color-warm-orange-border);
+}
+
+.tag-crypto {
+  background-color: var(--color-deep-green-subtle);
+  color: var(--color-deep-green);
+  border: 1px solid var(--color-deep-green-border);
+}
+
+.tag-neutral {
+  background-color: var(--bg-subtle);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-light);
+}
+
+/* Category Filter Tabs (Sharp & Simple, Solid Deep Green Active) */
+.category-chips-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 4px 0 10px 0;
+  scrollbar-width: thin;
+}
+
+.category-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.825rem;
+  font-weight: 600;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.12s ease;
+}
+
+.category-chip:hover {
+  border-color: var(--color-deep-green);
+  background-color: var(--color-cream-subtle);
+}
+
+.category-chip.active {
+  background-color: var(--color-deep-green);
+  color: #ffffff;
+  border-color: var(--color-deep-green);
+}
+
+/* Forms - Clean, Crisp, High-Contrast */
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.825rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-input);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-family: inherit;
+  transition: border-color 0.15s ease;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--color-deep-green);
+  box-shadow: 0 0 0 2px var(--color-deep-green-subtle);
+}
+
+/* Clean Solid Modals (No Glowing / No Frosted Blur) */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(20, 26, 22, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 16px;
+  animation: fadeIn 0.15s ease-out;
+}
+
+.modal-container {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  max-width: 680px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background-color: var(--bg-subtle);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.modal-body {
+  padding: 18px 20px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 20px;
+  border-top: 1px solid var(--border-light);
+  background: var(--bg-subtle);
+}
+
+/* Professional Audio Guide Trigger (Non-Glowing, Agricultural) */
+.voice-assistant-fab {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background-color: var(--color-deep-green);
+  color: #ffffff;
+  border: 1px solid var(--color-deep-green-hover);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  box-shadow: var(--shadow-hover);
+  transition: background-color 0.15s ease;
+}
+
+.voice-assistant-fab:hover {
+  background-color: var(--color-deep-green-hover);
+}
+
+.voice-assistant-fab.speaking {
+  background-color: var(--color-warm-orange);
+  border-color: var(--color-warm-orange-hover);
+}
+
+.voice-avatar-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-xs);
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Clean Audio Wave Bar */
+.soundwave-container {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 14px;
+}
+
+.soundwave-bar {
+  width: 2px;
+  background-color: currentColor;
+  animation: soundwave 0.8s ease-in-out infinite;
+}
+
+.soundwave-bar:nth-child(1) { height: 6px; }
+.soundwave-bar:nth-child(2) { height: 12px; animation-delay: 0.15s; }
+.soundwave-bar:nth-child(3) { height: 14px; animation-delay: 0.3s; }
+.soundwave-bar:nth-child(4) { height: 8px; animation-delay: 0.45s; }
+
+@keyframes soundwave {
+  0%, 100% { transform: scaleY(0.5); }
+  50% { transform: scaleY(1); }
+}
+
+/* Grids */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .grid-2, .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Clean Tables */
+.table-container {
+  overflow-x: auto;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+th {
+  background-color: var(--bg-subtle);
+  color: var(--text-primary);
+  text-align: left;
+  padding: 10px 14px;
+  font-weight: 700;
+  border-bottom: 1px solid var(--border-light);
+}
+
+td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover td {
+  background-color: var(--bg-subtle);
+}
+
+/* APMC Mandi Rates Live Ticker Bar (Solid Deep Green Bar, High-Contrast Text) */
+.mandi-ticker-wrap {
+  background-color: var(--color-deep-green);
+  color: #ffffff;
+  border-bottom: 1px solid var(--color-deep-green-hover);
+  display: flex;
+  align-items: center;
+  height: 38px;
+  overflow: hidden;
+  user-select: none;
+}
+
+.mandi-ticker-track {
+  display: flex;
+  gap: 24px;
+  animation: tickerScroll 42s linear infinite;
+  white-space: nowrap;
+}
+
+.mandi-ticker-track:hover {
+  animation-play-state: paused;
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: #e2ede5;
+}
+
+.ticker-rate {
+  font-weight: 800;
+  color: #ffffff;
+  font-family: var(--font-mono);
+}
+
+@keyframes tickerScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Professional Agriculture Hero Section (Solid Cream, Clean 1px Border) */
+.hero-banner-biophilic {
+  background-color: var(--color-cream-subtle);
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--color-deep-green);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Steady Square Status Indicator (NO Glowing / Pulsing Neon) */
+.live-pulse-dot {
+  width: 7px;
+  height: 7px;
+  background-color: var(--color-warm-orange);
+  display: inline-block;
+  border-radius: 1px;
+}
+
+/* Clean Language Chips */
+.voice-lang-chip {
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid var(--border-light);
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  transition: all 0.12s ease;
+}
+
+.voice-lang-chip.active {
+  background-color: var(--color-deep-green);
+  color: #ffffff;
+  border-color: var(--color-deep-green);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(12px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
